@@ -1,0 +1,3665 @@
+
+/* lib/layout/contextual/source/ContextualLayout.css */
+
+/* ContextualLayout.css - popup positioning and border radius adjustments */
+
+/*for popups above activator*/
+.vertical.above {
+  top: auto;
+  margin-top:-10px;
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+/*for popups below activator*/
+.vertical.below {
+  margin-top:10px;
+}
+/*for popups on the left of the activator*/
+.right.horizontal {
+  margin-left: -11px;
+}
+/*for popups on the right of the activator*/
+.left.horizontal {
+  margin-left: 10px;
+}
+/*corners*/
+/*vertical top corners*/
+/*for popups on the left of the activator*/
+.vertical.right.corner {
+  margin-left: 0px;
+}
+/*for popups on the right of the activator*/
+.vertical.left.corner {
+  margin-left: 0px;
+}
+.vertical.below.left.corner {
+  border-top-right-radius: 0px;
+}
+.vertical.below.right.corner {
+  border-top-left-radius: 0px;
+}
+/*vertical bottom corners*/
+.left.above.corner {
+  border-bottom-right-radius: 0px;
+}
+.right.above.corner {
+  border-bottom-left-radius: 0px;
+}
+/*horizontal bottom corners*/
+.left.low.corner {
+  border-bottom-left-radius: 0px;
+}
+.right.low.corner {
+  border-bottom-right-radius: 0px;
+}
+/*horizontal top corners*/
+.left.high.corner {
+  border-top-left-radius: 0px;
+}
+.right.high.corner {
+  border-top-right-radius: 0px;
+}
+
+/* lib/layout/fittable/source/FittableLayout.css */
+
+.enyo-fittable-rows-layout {
+	position: relative;
+}
+
+.enyo-fittable-rows-layout > * {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	/* float when not stretched */
+	float: left;
+	clear: both;
+}
+
+/* non-floating when stretched */
+.enyo-fittable-rows-layout.enyo-stretch > * {
+	float: none;
+	clear: none;
+}
+
+/* setting to enforce margin collapsing */
+/* NOTE: rows cannot have margin left/right */
+.enyo-fittable-rows-layout.enyo-stretch.enyo-margin-expand > * {
+	float: left;
+	clear: both;
+	width: 100%;
+	/* note: harsh resets */
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.enyo-fittable-columns-layout {
+	position: relative;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.enyo-locale-right-to-left .enyo-fittable-columns-layout {
+	text-align: right;
+}
+
+.enyo-fittable-columns-layout.enyo-center,
+.enyo-locale-right-to-left .enyo-fittable-columns-layout.enyo-center {
+	text-align: center;
+}
+
+.enyo-fittable-columns-layout > * {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	vertical-align: top;
+	display: inline-block;
+	white-space: normal;
+}
+
+.enyo-fittable-columns-layout > table {
+	display: inline-table;
+}
+
+.enyo-fittable-columns-layout.enyo-tool-decorator > * {
+	vertical-align: middle;
+}
+
+/* repair clobbered white-space setting for pre, code */
+.enyo-fittable-columns-layout > pre, .enyo-fittable-columns-layout > code {
+	white-space: pre;
+}
+
+.enyo-fittable-columns-layout > .enyo-fittable-columns-layout, .enyo-fittable-columns-layout > .onyx-toolbar-inline {
+	white-space: nowrap;
+}
+
+/* NOTE: columns cannot have margin top/bottom */
+.enyo-fittable-columns-layout.enyo-stretch > * {
+	height: 100%;
+	/* note: harsh resets */
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.enyo-locale-right-to-left .enyo-fittable-columns-layout {
+	direction: rtl;
+	text-align: right;
+}
+.enyo-locale-right-to-left .enyo-fittable-columns-layout.force-left-to-right {
+	direction: ltr;
+	text-align: left;
+}
+
+
+/* lib/layout/list/source/List.css */
+
+.enyo-list {
+	position: relative;
+}
+
+.enyo-list-port {
+	overflow: hidden;
+	position: relative;
+}
+
+.enyo-list-holdingarea {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.enyo-list-port.horizontal {
+	white-space: nowrap;
+	width:  1000000px;
+	height: 1000000px;
+}
+
+.enyo-list-port.vertical {
+	height: 1000000px;
+}
+
+.enyo-list-page {
+	position: absolute;
+	left: 0;
+}
+
+.enyo-locale-right-to-left .enyo-list-page {
+	left: auto;
+	right: 0;
+}
+
+.enyo-list-page.vertical {
+	left: 0;
+	right: 0;
+}
+
+.enyo-list-holdingarea {
+	top: -10000px;
+}
+
+.enyo-pinned-list-placeholder {
+	border: 1px solid red;
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 1000;
+	background: transparent;
+	overflow: hidden;
+}
+
+.enyo-pinned-list-placeholder button {
+	width: 100px; height: 100%;
+	position: absolute;
+	top: 0; right: 0;
+}
+
+.enyo-list-reorder-container {
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 1000;
+	background: transparent;
+	overflow: hidden;
+}
+
+.enyo-animatedTopAndLeft {
+	-webkit-transition: top 0.1s linear, left 0.1s linear;
+	-moz-transition: top 0.1s linear, left 0.1s linear;
+	-o-transition: top 0.1s linear, left 0.1s linear;
+	transition: top 0.1s linear, left 0.1s linear;
+}
+
+/* lib/layout/list/source/PulldownList.css */
+
+.enyo-list-pulldown {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+}
+
+.enyo-puller {
+	position: relative;
+	height: 50px;
+	font-size: 22px;
+	color: #444;
+	padding: 20px 0 0px 34px;
+}
+
+.enyo-puller-text {
+	position: absolute;
+	left: 80px;
+	top: 22px;
+}
+
+.enyo-puller-arrow {
+	position: relative;
+	background: #444;
+	width: 7px;
+	height: 28px;
+	transition: transform 0.3s;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-o-transition: -o-transform 0.3s;
+	-ms-transition: -ms-transform 0.3s;
+}
+
+.enyo-puller-arrow:after {
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	border: 10px solid transparent;
+	border-bottom-color: #444;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -10px;
+}
+
+.enyo-puller-arrow-up {
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+}
+
+.enyo-puller-arrow-down {
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+}
+
+/* lib/layout/list/source/GridListImageItem.css */
+
+/*
+	Put anything you reference with "url()" in ../assets/
+	This way, you can minify your application, and just remove the "source" folder for production
+*/
+.enyo-gridlist-imageitem {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.enyo-gridlist-imageitem img {
+	display: block;
+	width: 100%;
+}
+.enyo-gridlist-imageitem >.caption,
+.enyo-gridlist-imageitem >.sub-caption {
+	font-size: 10pt;
+	z-index: 10;
+	padding-top: 10px;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #fff;
+}
+.enyo-gridlist-imageitem.centered > .caption,
+.enyo-gridlist-imageitem.centered > .sub-caption {
+	text-align: center;
+}
+.enyo-gridlist-imageitem.disabled {
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+
+.enyo-gridlist-imageitem.sized-image.use-caption.use-subcaption {
+	padding-bottom: 50px;
+}
+.enyo-gridlist-imageitem.sized-image.use-caption,
+.enyo-gridlist-imageitem.sized-image.use-subcaption {
+	padding-bottom: 25px;
+}
+.enyo-gridlist-imageitem.sized-image > .image {
+	width: 100%;
+	height: 100%;
+}
+.enyo-gridlist-imageitem.sized-image.use-caption.use-subcaption > .caption {
+	position: absolute;
+	bottom: 22px;
+}
+.enyo-gridlist-imageitem.sized-image > .caption {
+	position: absolute;
+	bottom: 0;
+}
+.enyo-gridlist-imageitem.sized-image > .sub-caption {
+	position: absolute;
+	bottom: 0;
+}
+
+
+/* lib/layout/panels/source/arrangers/Arranger.css */
+
+.enyo-arranger {
+	position: relative;
+	overflow: hidden;
+}
+
+.enyo-arranger.enyo-fit {
+	position: absolute;
+}
+
+.enyo-arranger > * {
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.enyo-arranger-fit > * {
+	/* override any width/height set on panels */
+	width: 100% !important;
+	height: 100% !important;
+	min-width: 0 !important;
+	min-height: 0 !important;
+}
+
+
+/* lib/layout/panels/source/Panels.css */
+
+.enyo-panels {
+}
+
+.enyo-panels-fit-narrow {
+}
+
+.enyo-panels-fit-narrow > * {
+	min-width: 100%;
+	max-width: 100%;
+}
+
+
+/* lib/layout/tree/source/Node.css */
+
+.enyo-node {
+	cursor: default;
+	padding: 4px;
+}
+
+.enyo-node img {
+	vertical-align: middle;
+	padding-right: 6px;
+}
+
+.enyo-node-box {
+	overflow: hidden;
+}
+
+.enyo-node-client {
+	position: relative;
+}
+
+.enyo-animate .enyo-node-box, .enyo-animate .enyo-node-client {
+	-ms-transition-property: height, top;
+	-ms-transition-duration: 0.2s, 0.2s;
+	-moz-transition-property: height, top;
+	-moz-transition-duration: 0.2s, 0.2s;
+	-o-transition-property: height, top;
+	-o-transition-duration: 0.2s, 0.2s;
+	-webkit-transition-property: height, top;
+	-webkit-transition-duration: 0.2s, 0.2s;
+	transition-property: height, top;
+	transition-duration: 0.2s, 0.2s;
+}
+
+
+/* lib/layout/imageview/source/ImageViewPin.css */
+
+
+.pinDebug {
+	background:yellow;
+	border:1px solid yellow;
+}
+
+/* lib/onyx/css/onyx.less */
+
+/* Onyx default parameters defined here */
+/* Paths */
+/* application importing Onyx Less files will have to override this  */
+/* variable. Otherwise, Onyx image load will fail with a 404 error  */
+/* Fonts */
+/* ---------------------------------------*/
+/* Text Colors */
+/* ---------------------------------------*/
+/* Background Colors */
+/* ---------------------------------------*/
+/* Border Radius */
+/* ---------------------------------------*/
+/* Padding */
+/* ---------------------------------------*/
+/* Icon Sizes */
+/* ---------------------------------------*/
+/* Disabled Opacity */
+/* ---------------------------------------*/
+/* Gradient Overlays */
+/* ---------------------------------------*/
+/* Images */
+/* ---------------------------------------*/
+/* Onyx rules defined here */
+/* onyx-classes.less - combined CSS (less) files for all released Onyx controls
+   into single onyx.less file to avoid IE bug that allows
+   a maximum of 31 style sheets to be loaded before silently failing */
+.onyx {
+  color: #333333;
+  font-family: 'Helvetica Neue', 'Nimbus Sans L', Arial, sans-serif;
+  font-size: 20px;
+  cursor: default;
+  background-color: #eaeaea;
+  /* remove automatic tap highlight color */
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* prevent IE from inheriting line-height for these elements */
+.onyx button,
+.onyx label,
+.onyx input {
+  line-height: normal;
+}
+.onyx-selected {
+  background-color: #c4e3fe;
+}
+/* LESS pre-calculations */
+/* Individual Widget CSS */
+/* Icon.css */
+.onyx-icon,
+.onyx-icon-toggle {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+.onyx-icon.onyx-icon-button.active,
+.onyx-icon.onyx-icon-button.pressed,
+.onyx-icon-toggle.active {
+  background-position: 0 -32px;
+}
+.onyx-icon.disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+/* Button.css */
+.onyx-button {
+  outline: 0;
+  color: #292929;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+  padding: 6px 18px;
+  overflow: hidden;
+  border-radius: 3px;
+  /* for IE8 */
+
+  border: 1px solid #707070;
+  border: 1px solid rgba(15, 15, 15, 0.2);
+  /*
+		The border and the gradient interact in a strange way that
+		causes the bottom-border (top if the gradient is aligned top)
+		to be lighter than other borders.
+		We can fix it by using the darker bottom border below, but
+		then there are a few rogue pixels that end up very dark.
+	*/
+
+  /* border-bottom: 1px solid rgba(15, 15, 15, 0.5); */
+
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  background: #e1e1e1 url('../lib/onyx/images/gradient.png') repeat-x bottom;
+  background-size: contain;
+  /**/
+
+  text-overflow: ellipsis;
+  /* the following cause arcane problems on IE */
+
+  /*
+	min-width: 14px;
+	min-height: 20px;
+	*/
+
+}
+/*
+	IE8 can't handle these selectors in tandem:
+	.onyx-button.active, .onyx-button:active:not([disabled]) {
+
+	the effect is as if .onyx-button.active doesn't exist
+*/
+.onyx-button.active,
+.onyx-button.pressed {
+  background-image: url('../lib/onyx/images/gradient-invert.png');
+  background-position: top;
+  border-top: 1px solid rgba(15, 15, 15, 0.6);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.onyx-button[disabled] {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.onyx-button > img {
+  padding: 0px 3px;
+}
+/* Remove the focused inner-border style in Firefox (Windows) */
+.onyx-button::-moz-focus-inner {
+  border: 0;
+}
+/* Checkbox.css */
+.onyx-checkbox {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  background: url('../lib/onyx/images/checkbox.png') no-repeat;
+  /* reset for ? */
+
+  margin: 0px;
+  /* these entries cause toggle-button and checkbox to line up properly*/
+
+  display: inline-block;
+  vertical-align: middle;
+}
+.onyx-checkbox[checked] {
+  background-position: 0px -32px;
+}
+.onyx-checkbox[disabled] {
+  opacity: 0.4;
+}
+/* Grabber.css */
+.onyx-grabber {
+  background: url('../lib/onyx/images/grabbutton.png') no-repeat center;
+  width: 23px;
+  height: 27px;
+}
+/* Popup.css */
+.onyx-popup {
+  font-size: 16px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 6px;
+  color: #ffffff;
+  background: #4c4c4c url('../lib/onyx/images/gradient.png') repeat-x 0 bottom;
+}
+.onyx-popup-decorator {
+  position: relative;
+}
+/* Groupbox.css */
+.onyx-groupbox > * {
+  display: block;
+  /*box-shadow: inset 0px 1px 1px rgba(255,255,255,0.5);*/
+
+  border-color: #aaaaaa;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  /*padding: 10px;*/
+
+  /* reset styles that make 'item' look bad if they happen to be there */
+
+  border-radius: 0;
+  margin: 0;
+  font-size: 16px;
+}
+/* needed for MathJax support */
+.onyx-groupbox > script {
+  display: none;
+}
+.onyx-groupbox > *:first-child {
+  border-top-color: #aaaaaa;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+}
+.onyx-groupbox > *:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.onyx-groupbox > *:first-child:last-child {
+  border-radius: 4px;
+}
+.onyx-groupbox-header {
+  padding: 2px 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  /**/
+
+  background-color: #4c4c4c;
+  border: none;
+  background: #4c4c4c url('../lib/onyx/images/gradient.png') repeat-x 0 10px;
+}
+.onyx-groupbox .onyx-input-decorator {
+  display: block;
+}
+.onyx-groupbox > .onyx-input-decorator {
+  border-color: #aaaaaa;
+  border-width: 0 1px 1px 1px;
+  border-radius: 0;
+}
+.onyx-groupbox > .onyx-input-decorator:first-child {
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+}
+.onyx-groupbox > .onyx-input-decorator:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.onyx-groupbox > .onyx-input-decorator:first-child:last-child {
+  border-radius: 4px;
+}
+/* Input.css */
+.onyx-input-decorator {
+  padding: 6px 8px 10px 8px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+.onyx-input-decorator.onyx-focused {
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+.onyx-input-decorator.onyx-disabled {
+  /* FIXME: needed to color a disabled input placeholder. */
+
+  /*-webkit-text-fill-color: #888;*/
+
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.onyx-input-decorator > input {
+  /* reset */
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  font-size: 16px;
+  box-shadow: none;
+  /* FIXME: hack for styling reset on Android */
+
+  /* -webkit-appearance: caret;*/
+
+}
+.onyx-input-decorator.onyx-focused > input {
+  cursor: text;
+}
+.onyx-input-decorator.onyx-disabled > input {
+  cursor: default;
+}
+/* Menu.css */
+.onyx-menu,
+.onyx.onyx-menu {
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  padding: 3px 0;
+  border-radius: 3px;
+}
+.onyx-menu.onyx-menu-up {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+.onyx-toolbar .onyx-menu {
+  margin-top: 11px;
+  border-radius: 0 0 3px 3px;
+}
+.onyx-toolbar .onyx-menu.onyx-menu-up {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-radius: 3px 3px 0 0;
+}
+.onyx-menu-item {
+  display: block;
+  padding: 10px;
+}
+.onyx-menu-item:hover {
+  background: #284152;
+}
+.onyx-menu-divider,
+.onyx-menu-divider:hover {
+  margin: 6px 0;
+  padding: 0;
+  border-bottom: 1px solid #aaa;
+}
+.onyx-menu-label {
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.onyx-menu-label:hover {
+  background: none;
+}
+/* customize a toolbar to support menus */
+.onyx-menu-toolbar,
+.onyx-toolbar.onyx-menu-toolbar {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+/* Submenu.css */
+.onyx-submenu {
+  background: rgba(0, 0, 0, 0.25) url('../lib/onyx/images/gradient-invert.png') repeat-x 0 top;
+}
+/* Picker.css */
+.onyx-picker-decorator .onyx-button {
+  padding: 10px 18px;
+}
+.onyx-picker {
+  top: 0;
+  margin-top: -3px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: black;
+  background: #e1e1e1;
+}
+.onyx-picker.onyx-menu-up {
+  top: auto;
+  bottom: 0;
+  margin-top: 3px;
+  margin-bottom: -3px;
+}
+.onyx-picker .onyx-menu-item {
+  text-align: center;
+}
+.onyx-picker .onyx-menu-item:hover {
+  background-color: transparent;
+}
+.onyx-picker .onyx-menu-item.selected,
+.onyx-picker .onyx-menu-item.active,
+.onyx-picker .onyx-menu-item:active:hover {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #cde7fe;
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+.onyx-picker .onyx-menu-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.onyx-picker:not(.onyx-flyweight-picker) .onyx-menu-item:first-child,
+.onyx-flyweight-picker :first-child > .onyx-menu-item {
+  border-top: none;
+}
+.onyx-picker:not(.onyx-flyweight-picker) .onyx-menu-item:last-child,
+.onyx-flyweight-picker :last-child > .onyx-menu-item {
+  border-bottom: none;
+}
+/* TextArea.css */
+.onyx-input-decorator > textarea {
+  /* reset */
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  font-size: 16px;
+  box-shadow: none;
+  /* Remove scrollbars and resize handle */
+
+  resize: none;
+  overflow: auto;
+  /* FIXME: hack for styling reset on Android */
+
+  /* -webkit-appearance: caret;*/
+
+}
+.onyx-input-decorator.onyx-focused > textarea {
+  cursor: text;
+}
+.onyx-input-decorator.onyx-disabled > textarea {
+  cursor: default;
+}
+.onyx-textarea {
+  /* need >=50px for scrollbar to be usable on mac */
+
+  min-height: 50px;
+}
+/* RichText.css */
+.onyx-input-decorator > .onyx-richtext {
+  /* reset */
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  font-size: 16px;
+  min-height: 20px;
+  min-width: 100px;
+  box-shadow: none;
+  /* FIXME: hack for styling reset on Android */
+
+  /* -webkit-appearance: caret;*/
+
+}
+.onyx-input-decorator.onyx-focused > .onyx-richtext {
+  cursor: text;
+}
+.onyx-input-decorator.onyx-disabled > .onyx-richtext {
+  cursor: default;
+}
+/* RadioButton.css */
+.onyx-radiobutton {
+  padding: 8px 12px;
+  margin: 0;
+  outline: 0;
+  font-size: 16px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  /**/
+
+  background: #e7e7e7 url('../lib/onyx/images/gradient.png') repeat-x bottom;
+  /* IE8 */
+
+  border: 1px solid #333333;
+  border: 1px solid rgba(15, 15, 15, 0.2);
+  /* turn off right-border in a way IE8 ignores, because IE8 does not support :last-child */
+
+  border-right-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.onyx-radiobutton:first-child {
+  border-radius: 3px 0 0 3px;
+}
+.onyx-radiobutton:last-child {
+  border-radius: 0px 3px 3px 0px;
+  /* IE8 */
+
+  border-right: 1px solid #333333;
+  border-right: 1px solid rgba(15, 15, 15, 0.2);
+}
+.onyx-radiobutton.active {
+  color: #ffffff;
+  background: #0091f2 url('../lib/onyx/images/gradient-invert.png') repeat-x top;
+  border-top: 1px solid rgba(15, 15, 15, 0.6);
+  box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+/* Scrim.css */
+.onyx-scrim {
+  z-index: 1;
+  /*
+		note: by using pointer-events we allow tapping on scrim
+		while it is fading out; however, this requires any showing classes
+		to set pointer events to auto or scrim will not function as expected.
+	*/
+
+  pointer-events: none;
+}
+.onyx-scrim.onyx-scrim-translucent {
+  pointer-events: auto;
+  background-color: #000000;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+.onyx-scrim.onyx-scrim-transparent {
+  pointer-events: auto;
+  background: transparent;
+}
+/* TabButton.css */
+.onyx-radiobutton.onyx-tabbutton {
+  padding: 8px 34px;
+  font-size: 20px;
+  border-radius: 0px;
+}
+/* TabBar.css */
+.onyx-tab-bar {
+  width: 100%;
+  z-index: 10;
+  background-color: #cacaca;
+  padding-top: 1px;
+}
+.onyx-tab-bar-scroller {
+  padding-top: 2px;
+}
+.onyx-tab-bar-scroller > .enyo-thumb {
+  border: 0px;
+}
+.onyx-tab-wrapper {
+  padding: 3px 0px 3px 0px;
+}
+.onyx-tab-line {
+  position: relative;
+  margin-top: -0.1em;
+  border-top: 1px solid #646464;
+  z-index: 2;
+}
+.onyx-tab-rug {
+  position: relative;
+  padding: 0.3em;
+  background-color: #cacaca;
+  z-index: 4;
+}
+/* TabBarItem.css */
+.onyx-tab-item {
+  display: inline;
+  position: relative;
+  border: 1px solid #646464;
+  margin: 0px 2px 0px 2px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #b1b1b1;
+  z-index: 1;
+  padding-top: 0.2em;
+  padding-bottom: 0.7em ;
+  vertical-align: baseline;
+}
+.onyx-tab-item.active {
+  border-bottom: 1px solid #cacaca;
+  background-color: #cacaca;
+  z-index: 3;
+  padding-top: 0.3em;
+}
+.onyx-tab-item:hover {
+  background-color: #cacaca;
+}
+.onyx-tab-item button {
+  overflow: hidden;
+  margin: 3px;
+  border: 1px solid transparent;
+  background-color: transparent ;
+}
+.onyx-tab-item-dissolve {
+  display: inline-block;
+  height: 90%;
+  width: 2em;
+  top: 2px;
+  right: 19px;
+  position: absolute;
+  background: linear-gradient(to right, #b1b1b1 0%, rgba(177, 177, 177, 0) 100%);
+  /* W3C */
+
+  background: -moz-linear-gradient(right, #b1b1b1 0%, rgba(177, 177, 177, 0) 100%);
+  /* FF3.6+ */
+
+  background: -webkit-linear-gradient(left, rgba(177, 177, 177, 0), #b1b1b1);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -webkit-gradient(linear, right top, left top, color-stop(0%, #b1b1b1), color-stop(100%, rgba(177, 177, 177, 0)));
+  /* Chrome,Safari4+ */
+
+  background: -o-linear-gradient(left, #b1b1b1 0%, rgba(177, 177, 177, 0) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(177, 177, 177, 0) 0%, #b1b1b1 100%);
+  /* IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00b1b1b1, endColorstr=#ffb1b1b1, GradientType=1);
+  /* IE6-9 */
+
+}
+.onyx-tab-item-dissolve.active {
+  background: linear-gradient(to right, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* W3C */
+
+  background: -moz-linear-gradient(right, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* FF3.6+ */
+
+  background: -webkit-linear-gradient(left, rgba(202, 202, 202, 0), #cacaca);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -webkit-gradient(linear, right top, left top, color-stop(0%, #cacaca), color-stop(100%, rgba(202, 202, 202, 0)));
+  /* Chrome,Safari4+ */
+
+  background: -o-linear-gradient(left, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(202, 202, 202, 0) 0%, #cacaca 100%);
+  /* IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00cacaca, endColorstr=#ffcacaca, GradientType=1);
+  /* IE6-9 */
+
+}
+.onyx-tab-item-hovered {
+  background: linear-gradient(to right, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* W3C */
+
+  background: -moz-linear-gradient(right, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* FF3.6+ */
+
+  background: -webkit-linear-gradient(left, rgba(202, 202, 202, 0), #cacaca);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -webkit-gradient(linear, right top, left top, color-stop(0%, #cacaca), color-stop(100%, rgba(202, 202, 202, 0)));
+  /* Chrome,Safari4+ */
+
+  background: -o-linear-gradient(left, #cacaca 0%, rgba(202, 202, 202, 0) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(202, 202, 202, 0) 0%, #cacaca 100%);
+  /* IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00cacaca, endColorstr=#ffcacaca, GradientType=1);
+  /* IE6-9 */
+
+}
+.onyx-tab-item-close {
+  display: inline-block;
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-image: url('../lib/onyx/images/close-inactive.png');
+}
+.onyx-tab-item-close:hover {
+  background-image: url('../lib/onyx/images/close-active.png');
+}
+/* ToggleButton.css */
+.onyx-toggle-button {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  min-width: 64px;
+  vertical-align: middle;
+  text-align: center;
+  /* */
+
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.4);
+  background: #8bba3d url('../lib/onyx/images/gradient-invert.png') repeat-x bottom;
+  background-size: auto 100%;
+  /* label */
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.onyx-toggle-button.off {
+  background-color: #b1b1b1 !important;
+}
+.onyx-toggle-button-knob {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+  border-radius: 3px;
+  background: #f6f6f6 url('../lib/onyx/images/gradient.png') repeat-x;
+  background-size: auto 100%;
+}
+.onyx-toggle-button .onyx-toggle-button-knob {
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  float: right;
+}
+.onyx-toggle-button.off .onyx-toggle-button-knob {
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  float: left;
+}
+.onyx-toggle-button.disabled,
+.onyx-icon-button.disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.onyx-toggle-content {
+  min-width: 32px;
+  padding: 0 6px;
+}
+.onyx-toggle-content.empty {
+  padding: 0;
+}
+.onyx-toggle-content.off {
+  float: right;
+}
+.onyx-toggle-content.on {
+  float: left;
+}
+/* Toolbar.css */
+.onyx-toolbar {
+  /*
+		line-height is unreliable for centering, instead
+		use vertical-align: middle to align
+		elements along a common centerline and use
+		padding to fill out the space.
+	*/
+
+  padding: 9px 8px 10px 8px;
+  border: 1px solid #3A3A3A;
+  background: #4c4c4c url('../lib/onyx/images/gradient.png') repeat-x 0 bottom;
+  background-size: contain;
+  color: #ffffff;
+  /**/
+
+  white-space: nowrap;
+  overflow-y: visible;
+  font-size: 20px;
+}
+.onyx-toolbar-inline > *,
+.enyo-fittable-columns-layout.onyx-toolbar-inline > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 4px 6px 5px;
+  box-sizing: border-box;
+}
+/* needed for MathJax support */
+.onyx-toolbar-inline > script,
+.enyo-fittable-columns-layout.onyx-toolbar-inline > script {
+  display: none;
+}
+.onyx-toolbar .onyx-icon-button {
+  margin: 3px 2px 1px;
+}
+.onyx-toolbar .onyx-button {
+  color: #f2f2f2;
+  background-color: #555656;
+  border-color: rgba(15, 15, 15, 0.5);
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 36px;
+}
+.onyx-toolbar .onyx-input-decorator {
+  margin: 1px 3px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0px 6px 5px 6px;
+}
+.onyx-toolbar .onyx-input-decorator.onyx-focused {
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+.onyx-toolbar .onyx-input-decorator .onyx-input {
+  color: #e5e5e5;
+  font-size: 14px;
+}
+.onyx-toolbar .onyx-input-decorator .onyx-input:focus {
+  color: #000000;
+}
+.onyx-toolbar .onyx-input-decorator .onyx-input:focus::-webkit-input-placeholder {
+  color: #dddddd;
+}
+/* Tooltip.css */
+.onyx-tooltip {
+  z-index: 20;
+  left: 0;
+  padding: 4px 6px;
+  margin-top: 4px;
+  margin-left: -6px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  background: #216593 url('../lib/onyx/images/gradient.png') repeat-x 0 bottom;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+/*move the tooltip over to the right when displaying the right arrow so it aligns better with the decorator*/
+.onyx-tooltip.right-arrow {
+  left: 30px;
+}
+/*prep the left & right arrows using before & after - left arrow uses before & right arrow uses after*/
+.onyx-tooltip::before {
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  top: -6px;
+  left: 16px;
+}
+.onyx-tooltip::after {
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  top: -6px;
+  margin-left: -12px;
+}
+/*The following 3 rules handle the left & right arrows when the tooltip is displayed below the activator*/
+.onyx-tooltip.below {
+  top: 100%;
+}
+.onyx-tooltip.below.right-arrow::after {
+  border-bottom: 6px solid #1D587F;
+  top: -6px;
+}
+.onyx-tooltip.below.left-arrow::before {
+  border-bottom: 6px solid #1D587F;
+  top: -6px;
+}
+/*The following 3 rules handle the left & right arrows when the tooltip is displayed above the activator*/
+.onyx-tooltip.above {
+  top: -100%;
+}
+.onyx-tooltip.above.right-arrow::after {
+  content: '';
+  border-top: 6px solid #1D587F;
+  top: 100%;
+}
+.onyx-tooltip.above.left-arrow::before {
+  content: '';
+  border-top: 6px solid #1D587F;
+  top: 100%;
+}
+/* ProgressBar.css */
+.onyx-progress-bar {
+  margin: 8px;
+  height: 8px;
+  border: 1px solid rgba(15, 15, 15, 0.2);
+  border-radius: 3px;
+  background: #b8b8b8 url('../lib/onyx/images/gradient-invert.png') repeat-x;
+  background-size: auto 100%;
+}
+.onyx-progress-bar-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: #58abef url('../lib/onyx/images/gradient.png') repeat-x;
+  background-size: auto 100%;
+}
+.onyx-progress-bar-bar.striped {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.onyx-progress-bar-bar.striped.animated {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -moz-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+@-moz-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+/* ProgressButton.css */
+.onyx-progress-button {
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  color: #f1f1f1;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}
+.onyx-progress-button-bar {
+  height: 36px;
+}
+.onyx-progress-button-icon {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+.onyx-progress-button-client {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 36px;
+  margin-left: 8px;
+}
+.onyx-progress-button-client > * {
+  display: inline-block;
+}
+/* needed for MathJax support */
+.onyx-progress-button-client > script {
+  display: none;
+}
+/* Slider.css */
+.onyx-slider {
+  position: relative;
+  margin: 8px 20px;
+}
+.onyx-slider-taparea {
+  position: absolute;
+  top: -11px;
+  height: 28px;
+  width: 100%;
+}
+.onyx-slider-knob {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background: url('../lib/onyx/images/slider-handle.png') left top no-repeat;
+  margin: -23px -20px;
+}
+.onyx-slider-knob.active,
+.onyx-slider-knob.pressed {
+  background-position: 0 -40px;
+}
+/* RangeSlider.css */
+.onyx-range-slider-knob {
+  top: -17px;
+}
+.onyx-range-slider-label {
+  position: relative;
+  top: -18px;
+  text-align: center;
+  white-space: nowrap;
+}
+/* Item.css */
+.onyx-item {
+  padding: 14px;
+}
+.onyx-highlight,
+.onyx-highlight.onyx-swipeable-item-content {
+  background-color: #dedfdf;
+}
+.enyo-selected,
+.enyo-selected.onyx-swipeable-item-content {
+  background-color: #c4e3fe;
+}
+.onyx-item.onyx-swipeable-item {
+  overflow: hidden;
+  padding: 0;
+}
+.onyx-swipeable-item-content {
+  background-color: #eaeaea;
+  box-sizing: border-box;
+  padding: 18px 6px;
+  min-height: 40px;
+}
+/* Spinner.css */
+.onyx-spinner {
+  width: 59px;
+  height: 58px;
+  display: inline-block;
+  background: url('../lib/onyx/images/spinner-dark.gif') no-repeat 0 0;
+}
+.onyx-spinner.onyx-light {
+  background: url('../lib/onyx/images/spinner-light.gif') no-repeat 0 0;
+}
+/* MoreToolbar.css */
+.onyx-more-toolbar {
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+}
+.onyx-more-toolbar.active {
+  z-index: 11;
+}
+.onyx-more-menu {
+  left: auto;
+  right: 0px;
+  min-width: 0;
+}
+.onyx-more-toolbar .onyx-more-menu > * {
+  float: right;
+  clear: both;
+  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.onyx-more-button {
+  background-image: url('../lib/onyx/images/more.png');
+  width: 32px;
+  height: 32px;
+}
+/* DatePicker.css */
+.onyx-datepicker-month {
+  min-width: 75px;
+}
+.onyx-datepicker-day {
+  min-width: 60px;
+}
+.onyx-datepicker-year {
+  min-width: 70px;
+}
+/* TimePicker.css */
+.onyx-timepicker-hour {
+  min-width: 60px;
+}
+.onyx-timepicker-minute {
+  min-width: 60px;
+}
+.onyx-timepicker-ampm {
+  min-width: 60px;
+}
+/* ButtonColors.css */
+.onyx-button.onyx-blue {
+  background-color: #35A8EE;
+  color: #F2F2F2;
+}
+.onyx-button.onyx-affirmative {
+  background-color: #91BA07;
+  color: #F2F2F2;
+}
+.onyx-button.onyx-negative {
+  background-color: #C51616;
+  color: #F2F2F2;
+}
+.onyx-button.onyx-dark {
+  background-color: #555656;
+  color: #F2F2F2;
+}
+.onyx-button.onyx-light {
+  background-color: #cacaca;
+  color: #2F2F2F;
+}
+/* ContextualPopup.css */
+.onyx-contextual-popup-title {
+  font-weight: bold;
+  padding: 24px 32px 0px;
+}
+.onyx-contextual-popup-scroller {
+  padding: 24px 32px;
+}
+.onyx-contextual-popup-action-buttons {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.onyx-contextual-popup-action-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.onyx-contextual-popup,
+.onyx.onyx-contextual-popup {
+  font-size: 16px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 6px;
+  color: #ffffff;
+  background: #4c4c4c;
+}
+/*setup the nub*/
+.onyx-contextual-popup::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+/*for popups above activator*/
+.onyx-contextual-popup.vertical.above {
+  top: auto;
+  margin-top: -10px;
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+/*for popups below activator*/
+.onyx-contextual-popup.vertical.below {
+  margin-top: 10px;
+}
+/*for popups on the left of the activator*/
+.onyx-contextual-popup.right.horizontal {
+  margin-left: -11px;
+}
+/*for popups on the right of the activator*/
+.onyx-contextual-popup.left.horizontal {
+  margin-left: 10px;
+}
+/*nub positioning*/
+/*horizontally centered nub*/
+.onyx-contextual-popup.vertical::after {
+  position: absolute;
+  left: 45%;
+  border-bottom: 10px solid #4c4c4c;
+  border-top: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+/*nub near horizontal left*/
+.onyx-contextual-popup.vertical.right::after {
+  left: 0%;
+  margin-left: 20px;
+}
+/*nub near horizontal right*/
+.onyx-contextual-popup.vertical.left::after {
+  left: 100%;
+  margin-left: -55px;
+}
+/*downward facing nub*/
+.onyx-contextual-popup.vertical.above::after {
+  top: 100%;
+  border-top: 10px solid #4c4c4c;
+  border-bottom: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.onyx-contextual-popup.vertical.below.right::after {
+  top: 0%;
+  margin-top: -10px;
+  border-bottom: 10px solid #4c4c4c;
+  border-left: 10px solid transparent;
+}
+.onyx-contextual-popup.vertical.below.left::after {
+  top: 0%;
+  margin-top: -10px;
+  border-right: 10px solid transparent;
+}
+/*nub positioning for left/right popups*/
+/*vertically centered nub for popups on left of activator*/
+.onyx-contextual-popup.right::after {
+  left: 100%;
+  top: 47%;
+  margin-right: 20px;
+  border-left: 10px solid #4C4C4C;
+}
+/*nub near vertical top for popups on left of activator*/
+.onyx-contextual-popup.right.high::after {
+  top: 35px;
+  border-left: 10px solid #4C4C4C;
+}
+/*nub near vertical bottom for popups on left of activator*/
+.onyx-contextual-popup.right.low::after {
+  top: 100%;
+  margin-top: -55px;
+  border-left: 10px solid #4C4C4C;
+}
+/*vertically centered nub for popups on right of activator*/
+.onyx-contextual-popup.left::after {
+  left: 0%;
+  margin-left: -20px;
+  top: 45%;
+  border-right: 10px solid #4C4C4C;
+}
+/*nub near vertical top for popups on right of activator*/
+.onyx-contextual-popup.left.high::after {
+  top: 35px;
+  border-right: 10px solid #4C4C4C;
+}
+/*nub near vertical bottom for popups on right of activator*/
+.onyx-contextual-popup.left.low::after {
+  top: 100%;
+  margin-top: -55px;
+  border-right: 10px solid #4C4C4C;
+}
+/*corners*/
+/*vertical top corners*/
+/*for popups on the left of the activator*/
+.onyx-contextual-popup.vertical.right.corner {
+  margin-left: 0px;
+}
+/*for popups on the right of the activator*/
+.onyx-contextual-popup.vertical.left.corner {
+  margin-left: 0px;
+}
+.onyx-contextual-popup.vertical.below.left.corner {
+  border-top-right-radius: 0px;
+}
+.onyx-contextual-popup.vertical.below.right.corner {
+  border-top-left-radius: 0px;
+}
+.onyx-contextual-popup.vertical.below.left.corner::after {
+  top: 0%;
+  left: 100%;
+  margin-top: -10px;
+  margin-left: -19px;
+  border-right: 10px solid #4c4c4c;
+  border-top: 10px solid transparent;
+}
+.onyx-contextual-popup.vertical.below.right.corner::after {
+  top: 0%;
+  left: 0%;
+  margin-left: -1px;
+  border-left: 10px solid #4c4c4c;
+  border-top: 10px solid transparent;
+}
+/*vertical bottom corners*/
+.onyx-contextual-popup.left.above.corner {
+  border-bottom-right-radius: 0px;
+}
+.onyx-contextual-popup.right.above.corner {
+  border-bottom-left-radius: 0px;
+}
+.onyx-contextual-popup.vertical.left.above.corner::after {
+  top: 100%;
+  margin-left: -19px;
+  border-right: 10px solid #4C4C4C;
+  border-bottom: 10px solid transparent;
+  border-top: none;
+}
+.onyx-contextual-popup.vertical.right.above.corner::after {
+  top: 100%;
+  left: 0%;
+  margin-left: -1px;
+  border-left: 10px solid #4c4c4c;
+  border-bottom: 10px solid transparent;
+  border-top: none;
+}
+/*horizontal bottom corners*/
+.onyx-contextual-popup.left.low.corner {
+  border-bottom-left-radius: 0px;
+}
+.onyx-contextual-popup.right.low.corner {
+  border-bottom-right-radius: 0px;
+}
+.onyx-contextual-popup.left.low.corner::after {
+  top: 100%;
+  left: 0%;
+  margin-top: -19px;
+  margin-left: -12px;
+  border-bottom: 10px solid #4c4c4c;
+  border-right: 10px solid #4c4c4c;
+}
+.onyx-contextual-popup.right.low.corner::after {
+  top: 100%;
+  left: 100%;
+  margin-top: -19px;
+  border-bottom: 10px solid#4c4c4c;
+  border-left: none;
+}
+/*horizontal top corners*/
+.onyx-contextual-popup.left.high.corner {
+  border-top-left-radius: 0px;
+}
+.onyx-contextual-popup.right.high.corner {
+  border-top-right-radius: 0px;
+}
+.onyx-contextual-popup.left.high.corner::after {
+  top: 0%;
+  left: 0%;
+  margin-top: -1px;
+  margin-left: -12px;
+  border-top: 10px solid #4C4C4C;
+  border-bottom: none;
+}
+.onyx-contextual-popup.right.high.corner::after {
+  top: 0%;
+  left: 100%;
+  margin-top: -1px;
+  margin-left: -9px;
+  border-top: 10px solid #4C4C4C;
+  border-bottom: none;
+}
+/* some default colors */
+.onyx-dark {
+  background-color: #555656;
+}
+.onyx-light {
+  background-color: #cacaca;
+}
+.onyx-green {
+  background-color: #91BA07;
+}
+.onyx-red {
+  background-color: #C51616;
+}
+.onyx-blue {
+  background-color: #35A8EE;
+}
+
+
+/* lib/jsQTI/source/AssessmentItem.css */
+
+/* add basic styling for common classes */
+.itemBody span.italic { font-style: italic;}
+.itemBody span.bold { font-style: bold;}
+.itemBody span.underline { font-style: underline;}
+
+.side-by-side-layout .assessment-item {
+  padding-left: 2px;
+  padding-right: 0;
+}
+
+.learnosityItem,
+.jsqtiAnswer,
+.itemBody {
+  background-color: #fff;
+  width: 600px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.side-by-side-layout .learnosityItem,
+.side-by-side-layout .jsqtiAnswer,
+.side-by-side-layout .itemBody {
+  width: auto;
+  box-sizing: border-box;
+  min-width: 500px;
+  max-width: 700px;
+  margin: 16px auto;
+  margin-top: 0;
+}
+
+/* Shadowed elements */
+.learnosityItem,
+.jsqtiAnswer,
+.itemBody,
+.passages-presenter .passageFrame {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.learnosityItem .lrn_question p,
+.learnosityItem .lrn_question span:not([class*="mjx-"]) {
+  line-height: initial;
+}
+
+.jsqtiAnswer .lrn_question p,
+.jsqtiAnswer .lrn_question span:not([class*="mjx-"]) {
+  line-height: initial;
+} 
+
+.itemBody .passages,
+.learnosityItem .passages {
+  /*
+    This is literally only necessary because Safari on iOS
+    (up through iOS 11 at least) willfully ignores the width: attribute
+    on iframes, when their content overflows. This as a basic-ass hack
+    that keeps them constrained in the outer passages box. It has the
+    disadvantage of h-scrolling all passages at once, and it makes the
+    right-hand border disappear when the passage is too wide. But I don't
+    think this kind of nonstandard behavior warrants any more finessing.
+  */
+  width: 600px;
+  overflow: auto;
+}
+
+.learnosity-passage {
+  overflow: auto;
+  padding: 10px;
+}
+
+.jsqtiPassage, .passageFrame {
+  box-sizing: border-box;
+  width: 600px;
+  height: 834px;     /* sqrt(2) aspect ratio (emulates ISO 216) */
+  max-height: 80vh;  /* but never overtake the screen size */
+  border: 2px solid #e4e4e4;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.passages-presenter .passageFrame.learnosity-passage {
+  height:auto;
+}
+
+.passageFrame.learnosity-passage img {
+  max-width: none;
+}
+
+.error-flash {
+  background-color: rgba(229, 8, 0, 0.9);
+  min-height: 62px;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.assessment-test.side-by-side-layout {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+
+.assessment-test.side-by-side-layout > * {
+  flex: 1 1 600px;
+}
+
+.assessment-test.side-by-side-layout.showing-passages .learnosityItem,
+.assessment-test.side-by-side-layout.showing-passages .jsqtiAnswer,
+.assessment-test.side-by-side-layout.showing-passages .itemBody {
+  margin-left: 0;
+}
+
+.assessment-test:not(.side-by-side-layout) .question-stack {
+  height: 100%;
+}
+
+.passages-presenter {
+  overflow: auto;
+}
+
+.passages-presenter.hidden {
+  display: none;
+}
+
+.passages-presenter .cassette {
+  box-sizing: border-box;
+  padding: 0 2px 0 0;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+
+.passages-presenter .passageFrame {
+  display: block;
+  max-height: none;
+  width: 100%;
+  max-width: 700px;
+  min-width: 450px;
+  height: 90vh;
+  border: none;
+  border-radius: 0;
+  flex: 0 0 auto;
+}
+
+.shuffled-icon {
+  background: url('../lib/jsQTI/assets/shuffled-6f0935c622.svg') center no-repeat;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  left: 156px;
+  cursor: pointer;
+}
+
+/* Tippy Tool Tip Styles */
+.tippy-tooltip.mc-theme .tippy-backdrop {
+  background: #fff;
+  font-size: 11px;
+  line-height: 10px;
+  color: #6ea523;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Default (sharp) arrow */
+.tippy-tooltip.mc-theme .tippy-arrow {
+  border-top-color: #fff;
+}
+/* Round arrow */
+.tippy-tooltip.mc-theme .tippy-roundarrow {
+  fill: #fff;
+}
+
+/* If `animateFill: false` */
+.tippy-tooltip.mc-theme {
+  border: 0 solid #eee;
+  border-width: 0px 1px 1px 1px;
+  border-radius: 5px;
+  color: #666666;
+  background: #fff;
+  height: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  height: auto;
+}
+
+
+
+.learnosityItem .jsqtiAnswerBody,
+.jsqtiAnswer {
+  position: relative;  /* Confines the item and loading scrim to the box */
+}
+
+.loadingScrim {
+  background: rgba(255, 255, 255, 0.5);
+  background-size: 80px 80px;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  z-index: 5000;
+}
+
+.loadingScrim .spinner {
+  width: 100%;
+  height: 100%;
+  background: url('../lib/jsQTI/assets/loader-4a0934f325.svg') center no-repeat;
+  background-size: 80px 80px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.loadingScrim.stillWaiting .spinner {
+  opacity: 1;
+}
+
+.ipad-scroller .enyo-touch-scroller{
+  overflow-y: auto;
+}
+
+.jsqti-ios .itemBody .jsqtiPassage {
+  overflow: auto;
+}
+.jsqtiPassage iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #FFFFFF;
+}
+.itemBody.printable .jsqtiPassage {
+  display: none;
+}
+.printable .jsqtiAnswer,
+.itemBody.printable {
+  padding: 0;
+  margin: 0;
+}
+.itemBody img,
+.jsqtiAnswer img {
+  /* This is equal to the fixed with of the item body itself */
+  max-width: 600px;
+}
+
+.itemBody table {
+  border-collapse:collapse;
+}
+.itemBody table,
+.itemBody th,
+.itemBody td {
+  border: 1px solid #ccc;
+  padding: 0.3em;
+}
+
+.itemBody.printable table.print-option,
+.itemBody.printable td.print-option-label,
+.itemBody.printable td.print-option-value {
+  border: none;
+}
+
+.itemBody math {
+  padding: 0.3em;
+}
+
+/* interaction styles */
+
+.choiceInteraction {
+  width: 600px;
+  margin: 10pt auto;
+}
+
+.simpleChoice label {
+  display: block;
+  margin-left: 35px;
+}
+.simpleChoice input {
+  float: left;
+  width: 20px;
+  line-height: 40px;
+}
+
+.jsqtiChoiceGroup {
+  display: inline-block;
+}
+.jsqtiChoice {
+  width: auto;
+  display: block;
+  text-align: left;
+  min-height: 30px;
+  margin: 5px;
+  padding-left: 20px;
+}
+.printable .jsqtiChoice {
+  margin: 0;
+  padding: 0;
+}
+
+.jsqtiChoice .onyx-checkbox {
+  margin-right: 20px;
+  float: left;
+}
+.printable .jsqtiChoice .onyx-checkbox {
+  display: none;
+}
+.jsqtiChoice .jsqtiChoiceLabel {
+  margin: 10px 0 0 52px;
+  padding-top: 2px;
+}
+.printable .jsqtiChoice .jsqtiChoiceLabel {
+  margin: 0;
+  padding: 0;
+}
+
+/* inline choices */
+.jsqtiInlineChoiceInteraction {
+  padding-right: 5px;
+}
+.jsqtiInlineChoiceInteraction .onyx-picker-decorator .onyx-button {
+  padding: 6px 18px;
+}
+
+
+/* orderable choices */
+.orderableChoice {
+  display: inline-block;
+  padding-left: 40px;
+  margin: 3pt 10pt;
+  background: #fff url('../lib/jsQTI/assets/grip-19c3414555.png') no-repeat 10px center;
+  border: 1px solid #ccc;
+}
+.orderableChoiceLabel {
+  border-left: 1px solid #ccc;
+  padding: 5pt;
+}
+
+.orderableChoice.dragging {
+  border: 1px dotted #ccc;
+}
+.orderableChoice.dragging .orderableChoiceLabel {
+  border-left: 1px dotted #ccc;
+}
+
+
+/* text input */
+.jsqtiTextEntryInteraction label {
+  padding: 0 0 0 5px;
+}
+
+/* extendedText */
+.jsqtiExtendedTextInteraction > label {
+  display: block;
+}
+.jsqtiExtendedTextInteraction textarea {
+  width: 100%;
+  height: 200px;
+}
+
+
+
+/* answer styles */
+.jsqtiAnswer {
+  padding: 0;
+  width: 630px;
+}
+.jsqtiAnswer .jsqtiAnswerHeading {
+  background: #6ea523;
+  border: none;
+}
+
+.jsqtiAnswer .jsqtiAnswerBody {
+  padding: 15px;
+}
+
+
+/* rubric styles */
+.jsqtiPointsInput {
+  padding: 5px;
+  border-color: orange;
+  margin: 15px;
+}
+
+/* drag styles */
+.jsqtiMatchAnswer .orderableChoice  {
+  /* background: #b6d389 url('../lib/jsQTI/assets/grip-19c3414555.png') no-repeat 10px center; */
+  background: #FF8400 url('../lib/jsQTI/assets/drag-handle-c74cc03682.svg') no-repeat 10px center;
+  border-color: #FF8400
+}
+
+.jsqtiMatchAnswer .orderableChoiceLabel {
+  background-color: #fff;
+  border-color: #FF8400;
+}
+
+.jsqtiMatchTarget .jsqtiMatchAnswer .orderableChoice{
+  margin: 0;
+}
+
+.jsqtiMatchTarget .jsqtiMatchAnswer{
+  color: #000;
+}
+
+.jsqtiMatchTarget.solid {
+  border-width: 1px;
+}
+
+.jsqtiMatchTarget {
+  margin: 5px;
+  padding: 1px;
+  color: #999;
+  background-color: #fff;
+  border: 2px dashed #b6d389;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+/* These lines will hide the "drag" bar on Gap Match/Drag and Drop items when they are in the answer field */
+.associableHotspot .jsqtiMatchAnswer .orderableChoice {
+  padding-left: 25px;
+  background: #FF8400 url('../lib/jsQTI/assets/drag-handle-small-1d583228fe.svg') no-repeat 5px center;
+}
+
+.associableHotspot .jsqtiMatchAnswer .orderableChoiceLabel {
+  padding: 0;
+}
+
+.solid {
+  border-style: solid;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 1.15s linear;
+    -moz-transition: opacity 1.15s linear;
+    -ms-transition: opacity 1.15s linear;
+    -o-transition: opacity 1.15s linear;
+    transition: opacity 1.15s linear;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.jsqtiMatchAnswers {
+  padding: 20px 10px 10px 10px;
+  margin: 20px -15px -15px -15px;
+  background-color: #fafafa;
+  border: 1px solid #e6e6e6;
+  min-height: 50px;
+  white-space: normal;
+}
+
+.jsqtiCorrectMatchAnswer {
+  display: inline-block;
+}
+
+.jsqtiGraphicGapMatchInteraction {
+  position: relative;
+}
+
+.associableHotspot {
+  position: absolute;
+}
+
+.image-spinner-small {
+  z-index: 5000;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+}
+
+/* fixes selecting textbox in safari */
+.lrn_response_wrapper{
+  -webkit-user-select: text !important;
+}
+
+/* fixes enyo selection problem */
+.enyo-input::-moz-selection, .enyo-unselectable::-moz-selection, .enyo-unselectable ::-moz-selection {
+  color: inherit;
+  background-color: #d4e6bd;
+}
+
+.enyo-input::selection, .enyo-unselectable::selection, .enyo-unselectable ::selection {
+  color: inherit;
+  background-color: #d4e6bd;
+}
+
+
+/* teacher lockout */
+*[disabled] {
+  cursor: not-allowed !important;
+  /* If we don't put !important on this, all sorts of enyo styles override it. */
+}
+
+.manually-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.manually-disabled > * {
+  pointer-events: none;
+}
+
+.features-container {
+  display: none;
+}
+
+
+/* lib/jsQTI/source/MCButton.css */
+
+.mc-button {
+  /* Primary, Large by default */
+  height: 44px;
+  width: 200px;
+  margin: 8px 4px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #007fcb;
+  background: #0374B5;
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+
+  /* Gracefully truncate raw text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+
+  /* Gracefully lay out child elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mc-button > * {
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mc-button > span {
+  flex-shrink: 10;
+  min-width: 0;
+}
+
+.mc-button:first-child { margin-left:  0; }
+.mc-button:last-child  { margin-right: 0; }
+
+.mc-button.in-progress {
+  /* to be combined with an Ellipsis */
+  text-transform: none;
+}
+
+.mc-button .animated-ellipsis {
+  margin-left: 8px;
+}
+
+.mc-button:disabled {
+  pointer-events: none;
+}
+
+.mc-button:disabled:not(.in-progress) {
+  opacity: 0.5;
+}
+
+.mc-button:active {
+  background-color: #007fcb;
+  border-color: #007fcb;
+}
+
+.mc-button.small {
+  width: 128px;
+  height: 40px;
+  padding: 8px;
+}
+
+.mc-button.small.white-button{
+  color: #0374B5;
+  background: #FFFFFF;
+  display: inline;
+}
+.mc-button.red-button{
+  display: inline;
+  color: white;
+  border-color: #E0061F;
+  background: #E0061F;
+}
+
+.mc-button.small.white-button:hover{
+  background-color: #007fcb;
+  color: white;
+}
+
+.mc-button.secondary {
+  background-color: rgb(204, 204, 204);
+  border-color: rgb(204, 204, 204);
+}
+
+.mc-button.secondary:active {
+  background-color: rgb(143, 143, 143);
+  border-color: rgb(143, 143, 143);
+}
+
+.mc-button.outline {
+  background-color: white;
+  border-color: #0374B5;
+  color: #0374B5;
+}
+
+.mc-button.outline:active {
+  background-color: #007fcb;
+  border-color: #007fcb;
+  color: white;
+}
+
+.mc-button.icon-button {
+  width: fit-content;
+}
+
+.icon-button span {
+  padding-left: 30px;
+}
+
+.learnosity-feature-button {
+  background: #0374B5;
+  border-radius: 3px;
+  width: fit-content;
+  margin: 8px 0;
+}
+
+.feature-imagetool {
+  background: url('../lib/jsQTI/assets/ruler_white-bc8d802635.svg') no-repeat 8px center;
+  padding-left: 11px;
+}
+.feature-protractor {
+  background: url('../lib/jsQTI/assets/protractor_white-bce5a68311.svg') no-repeat 11px/24px;
+  padding-left: 11px;
+}
+.feature-calculator, .feature-customfeature {
+  background: url('../lib/jsQTI/assets/calculator_white-916b556729.svg') no-repeat 13px center;
+}
+
+
+/* lib/bubblesheet-core/source/PlaceholderMessage.css */
+
+/* At the top of this file is where we can define what icons are
+   available for the placeholder messages.
+*/
+
+.placeholder_message.no_document {
+  background-image: url('../lib/bubblesheet-core/assets/no-document-145b29cac3.svg');
+  background-position: 50% 89px;
+}
+
+
+
+
+.placeholder_message {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  margin: 20px 0;
+  padding: 85px;
+  padding-top: 175px;
+
+  border-radius: 7px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 85px;
+}
+
+.placeholder_message > * {
+  margin-bottom: 10px;
+}
+
+.placeholder_message h1, .placeholder_message p {
+  text-align: center;
+  width: 65%;
+  min-width: 275px;
+}
+
+.placeholder_message h1 {
+  color: #555555;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.placeholder_message p {
+  color: rgba(85, 85, 85, 0.5);
+  line-height: 1.71;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.placeholder_message button, .placeholder_message .mc-button {
+  margin-top: 20px;
+}
+
+
+/* source/App.css */
+
+/*
+	Put anything you reference with "url()" in ../assets/
+	This way, you can minify your application, and just remove the "source" folder for production
+*/
+#app {
+}
+.app-panels > * {
+  width: 100%;
+}
+.focus {
+  background-color: #CCC;
+}
+
+
+/* source/Retro.css */
+
+
+body, .onyx, .assess-panel > .lrn-assess, .assess-panel .lrn, .assess-panel .lrn h1, .assess-panel .lrn h2, .assess-panel .lrn h3, .assess-panel .lrn h4, .assess-panel .lrn h5, .assess-panel .lrn h6, .assess-panel .lrn .h1, .assess-panel .lrn .h2, .assess-panel .lrn .h3, .assess-panel .lrn .h4, .assess-panel .lrn .h5, .assess-panel .lrn .h6 {
+  font-family: 'LatoWeb', 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+.BubbleSheet {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.assessment-viewer {
+  -webkit-flex: 1 1 642px;
+  flex: 1 1 642px;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.assessment-viewer iframe {
+  display: block;
+}
+
+.doc-or-item-view {
+  flex: 1 0 auto; /* Grow to fit vertically */
+  overflow-y: auto;
+}
+
+.no-doc-message-spacer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-doc-message-spacer .placeholder_message {
+  background-color: transparent;
+}
+
+.questions-scroller {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  background-color: white;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.mc-hidden-panel {
+  visibility: hidden;
+}
+
+.mc-textonly-attention {
+  background: url('../assets/info-1b0ee9c984.svg') no-repeat;
+  background-position: left top;
+  background-size: 20px 20px;
+  padding-left: 38px;
+  color: rgb(48, 155, 255);
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+label.always-focused {
+  border-color: #C7CDD1;
+  background-color: white;
+}
+
+.onyx-input-decorator.onyx-focused {
+  box-shadow: 0 0 0 1px #0374B5;
+}
+
+label.always-focused.disabled {
+  border: solid 2px #e50900;
+  opacity: unset;
+}
+
+label.always-focused > input {
+  cursor: text;
+}
+.floating-label {
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  line-height: 44px;
+  padding-right: 10px;
+}
+
+
+/* header */
+.header {
+  height: 40px; /* 56 desired - 14 padding - 2 border */
+  box-sizing: content-box;
+  border: 1px solid #394B58;
+  background: #394B58;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+.header > * {
+  shadow: 0 -1px 1px black;
+  margin: 0px;
+}
+.header_test {
+  display: -webkit-flex;  /* We can get rid of these -webkit flex prefixes when iOS 8 support is phased out. */
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  background: #F5F5F5;
+  border:none;
+  color: #2D3B45;
+  padding: 9px 16px 0;
+  margin-bottom: 12px;
+}
+.header_test > * {
+  float: none !important;
+}
+.header_test .bs-button-new {
+  color: #2D3B45;
+  height: 30px;
+  background: url('../assets/icon-pause-526ee8bcdf.svg') no-repeat left center, url('../assets/icon-pause-hover-b827a87882.svg') no-repeat -40px center, url('../assets/icon-pause-pressed-c71c5d0659.svg') no-repeat -40px center;
+  background-size: 30px 30px;
+  margin: 0;
+  padding-left: 36px;
+}
+.header_test .bs-button-new .content-back {
+  font-weight: bold;
+}
+.header_test .bs-button-new.tools {
+  background: none;
+  padding: 0;
+}
+.header_test .bs-button-new:hover,
+.header_test .bs-button-new:focus {
+  color: #0374B5;
+  background-position: -40px center, left center, -40px center;
+}
+.header_test .bs-button-new:active {
+  color: #2D3B45;
+  background-position: -40px center, -40px center, left center;
+}
+.header-label{
+  background: url('../assets/m-c-logo-2bf6560828.svg') no-repeat 0px center;
+  display: inline-block;
+  padding-left: 35px;
+  padding-right: 18px;
+}
+
+
+/* Assessment Test Area */
+
+/* (see also LRNAssessCustomization.css) */
+
+.space-for-toolbar .assessment-item,
+.space-for-toolbar .passages-presenter {
+  padding-top: 70px;
+}
+
+@media (max-width: 1355px) {
+  /* Force a one-column layout on small screens
+     specificity is important here. */
+
+  .assessment-test.side-by-side-layout {
+    display: block;
+  }
+
+  .assessment-test.side-by-side-layout.showing-passages .learnosityItem,
+  .assessment-test.side-by-side-layout.showing-passages .jsqtiAnswer,
+  .assessment-test.side-by-side-layout.showing-passages .itemBody {
+    margin-left: auto;
+  }
+
+  .question-stack {
+    height: 100vh;
+  }
+
+  .side-by-side-layout .assessment-item {
+    padding-left: 0;
+  }
+
+  .passages-presenter .cassette {
+    align-items: center;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+
+
+.form_container{
+  width: 200px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 40px;
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+.form_lbl{
+  margin: auto;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#floatingLayer .answermodal, .mc-modal-box .answermodal {
+  max-width: calc(100% - 16px);
+  background: white;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: -100px; /* for old browsers */
+  margin-top: calc(-30vh + 150px);
+}
+.submit-container {
+  text-align: center;
+  padding: 28px;
+}
+.answermodal .preferred-strut {
+  width: 386px;
+}
+
+.finished-container{
+  padding-top: 32px;
+  padding-bottom: 34px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+  text-align: center;
+  background: #394B58;
+  display: inline-block;
+  width: 100%;
+  display: inline-block;
+}
+
+#floatingLayer .answermodal .submit-container .submit-last{
+  background-color: #93bbde;
+  border-color: #6f97ba;
+}
+.mc-modal-box {
+  background-color: rgba(240, 240, 240, 0.8);
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 50000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-transform: none;
+
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.answermodal .animated-ellipsis {
+  margin: 0 auto;
+}
+.saving-modal .answermodal {
+  height: 400px;
+  padding-top: 90px;
+}
+.saving-modal .answermodal .animated-ellipsis {
+  margin-bottom: 7px;
+}
+.saving-modal .answermodal .modal-header {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgb(85, 85, 85);
+}
+.saving-modal .answermodal .modal-message {
+  color: rgba(85, 85, 85, 0.5);
+}
+.onyx-scrim.onyx-scrim-translucent {
+  background-color: #f0f0f0;
+  opacity: 0.8;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.enyo-prevnext-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border: none;
+  padding: 10px 0px 0px 0px;
+  background: transparent;
+}
+.enyo-prevnext-container .previous-button {
+  -webkit-order: 1;
+  order: 1;
+  margin-right: 9px;
+  background-image: url('../assets/icon-back-white-a91ae8e49f.svg');
+}
+.enyo-prevnext-container .question-indicator {
+  -webkit-order: 2;
+  order: 2;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.enyo-prevnext-container .next-button {
+  -webkit-order: 3;
+  order: 3;
+  margin-left: 9px;
+  background-image: url('../assets/icon-forward-white-78e24039f3.svg');
+}
+.enyo-prevnext-container .prev-next-button {
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  margin: 0;
+  width: 44px;
+  height: 44px !important;
+  border-radius: 22px;
+  border: none;
+  box-shadow: none;
+  font-weight: 600;
+  background-color: #0374B5;
+  background-position: center;
+  background-size: 12px 20px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.enyo-prevnext-container .prev-next-button:hover {
+  background-color: #007fcb;
+}
+.enyo-prevnext-container .prev-next-button:active {
+  background-color: #007fcb;
+}
+.enyo-prevnext-container .prev-next-button.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: normal;
+}
+.enyo-prevnext-container .question-indicator > p {
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+.enyo-prevnext-container .question-indicator > p > .solidus {
+  margin: 0 0.3em;
+  font-style: italic;
+}
+
+.next-student, .prev-student {
+  display: none;
+}
+
+.modal-answers {
+  margin-top: 60px;
+  text-align: center;
+}
+.submit-container .modal-answers {
+  margin-top: inherit;
+  margin-bottom: 47px;
+}
+.modal-button{
+  width: 250px;
+  max-width: 100%;
+  height: 44px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#floatingLayer .answermodal .submit-container .submit-last, .modal-button.submit-answers {
+  background: #0B874B;
+  border: none;
+  color: white;
+}
+.modal-button.submit-answers:hover,
+.modal-button.submit-answers:focus {
+  background: #00cd1c !important;
+}
+.modal-button.submit-answers:active {
+  background: #009a15 !important;
+}
+.modal-button.cancel {
+  background: #E0061F;
+  color: white;
+}
+.modal-button.cancel:hover,
+.modal-button.cancel:focus {
+  background: #f91521;
+}
+.modal-button.cancel:active {
+  background: #d60510 !important;  /* This is !important to override onyx */
+}
+
+.close-modal {
+  width: 18px;
+  height: 18px;
+  float: right;
+  text-align:center;
+  cursor: pointer;
+  background: url('../assets/icon-close-b965994641.svg') no-repeat;
+  background-size: 18px 18px;
+}
+
+.enyo-prevnext-container div.icon-back{
+  background: #8C8C8C url('../assets/icons-18-white-614499ccad.png') no-repeat -144px 0;
+}
+
+.modal-header, .modal-message {
+  text-align: center;
+}
+.modal-header {
+  color: #444444;
+  font-weight: normal;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.modal-message {
+  color: #666666;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.answermodal .modal-message {
+  max-width: 330px;
+}
+
+.student_display {
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 5px 16px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  clear:both;
+  text-transform: none;
+  color: #444444;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+.student-name-block {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.student-name-block > * {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.student-name-display {
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+}
+.test_id_display {
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: none;
+}
+.test_id_display .label {
+  padding-right: 5px;
+}
+.test_id_display.saving {
+  background: url('../assets/spinner-8c2e69af85.gif') no-repeat right center;
+  padding-right: 16px;
+}
+.test_id_display.saving .test_id_text {
+  display: none;
+}
+
+
+/* buttons*/
+button, button.enyo-unselectable {
+  cursor: pointer;
+}
+
+button.or-button{
+  display: block;
+  width: 200px;
+  height: 44px;
+  margin: auto;
+  border-radius: 0.2em;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #0374B5; /* for non-css3 browsers */
+  border: none;
+  box-shadow: none;
+}
+button.or-button:hover, button.or-button:focus {
+  background: #007fcb;
+  border: none;
+  outline: 0;
+}
+button.or-button:active{
+  background: #007fcb;
+  border:none;
+}
+
+button.bs-button-new {
+  color: #fff;
+  box-shadow: none;
+  border: none;
+  padding: 0 20px 0 31px;
+  height: 40px;
+  float: left;
+  background: url('../assets/back-screen-92c2bc632e.svg') no-repeat 15px center;
+  background-size: 8px 14px;
+}
+
+.header > button.bs-button-new:first-child {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+}
+
+button.bs-button-new,
+.prev-next-button {
+  outline: 0;
+}
+button.bs-button-new:after{
+  clear:both;
+}
+
+div.content-back{
+  display: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+button.bs-button {
+  border-radius: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #fff;
+  text-shadow: #000 0px -1px 1px;
+
+  background: #555555; /* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#333333'); /* for IE */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#333));
+  background: -moz-linear-gradient(top,  #555555,  #333333); /* for firefox 3.6+ */
+}
+button.bs-button:active:hover:not([disabled]) {
+  background: #555555; /* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#555555'); /* for IE */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#555));
+  background: -moz-linear-gradient(top,  #333333,  #555555); /* for firefox 3.6+ */
+}
+button.backbtn,
+button.bs-button.backbtn {
+  font-size: 13px;
+  height: 30px;
+  margin: 0;
+  padding: 7px 6px;
+  /* position: absolute; */
+}
+
+button .icon-forward {
+  float: right;
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+
+  box-shadow: inset 0px -1px 0px #aaa;
+
+  border-radius: 9px;
+
+  background: #222 url('../assets/icons-18-white-614499ccad.png') no-repeat -108px 0;
+}
+
+.line-arrow {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 12px; /*set the size for arrow*/
+    width: 4em;
+    height: 4em;
+    margin-top: -2em;
+    top: 50%;
+}
+.line-arrow.left {
+    border-top: 1px solid #a9a9a9;
+    border-left: 1px solid #a9a9a9;
+    transform: rotate(-54deg) skew(-20deg);
+    left: 20px;
+}
+button .icon-back-new {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 3em;
+  float:left;
+  padding: 2px;
+}
+button .icon-back {
+  float: left;
+  margin-top: -2px;
+  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+
+  box-shadow: inset 0px -1px 0px #aaa;
+
+  border-radius: 9px;
+
+  background: #222 url('../assets/icons-18-white-614499ccad.png') no-repeat -144px 0;
+}
+
+
+
+/* answer sheet panel */
+
+.answerSheetPanel {
+  -webkit-flex: 0 3 306px;
+  flex: 0 3 306px;
+  min-width: 256px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  border-left: 1px solid rgb(187, 187, 187);
+  text-transform: uppercase;
+}
+
+.BubbleSheet.qti-mode .answerSheetPanel {
+  flex-basis: 256px;
+}
+
+.answerSheetPanel.fullwidth {
+  flex: 1 1 auto;
+}
+
+.questions {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+.question {
+  padding: 20px 12px 20px 16px;
+  min-height: 85px; /* 125px - padding (20+20px) */
+  max-width: 370px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.question.qti-mode {
+  height: 80px;
+  min-height: 40px;
+}
+.question.qti-mode > label {
+  margin-top: 6px;
+}
+.question p {
+  margin: 0;
+}
+.question.focus {
+  background-color: #b3d0f0;
+  box-shadow: inset 5px 0 0 0 #0374B5;
+}
+#app_bubbleSheet_scroller .enyo-touch-scroller {
+  background-color: #fafafa;
+}
+.question > label, .question .title-row {
+  display: block;
+  padding-bottom: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #555555;
+}
+.question .title-row {
+  padding-bottom: 0;
+  padding-top: 7px;
+}
+
+.item-display {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.response-status {
+  display: none;
+  position: relative;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+}
+.response-status.answered {
+  display: block;
+  background: url('../assets/check-07a5ec5fe0.svg') no-repeat center/contain;
+}
+
+
+/* choice */
+.choices {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.choice {
+  box-sizing: border-box;
+  background: #fff;
+  border: solid 1px #555555;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  line-height: 42px;
+  text-align: center;
+  color: #555;
+  display: block;
+  cursor: pointer;
+  box-shadow: none;
+  text-shadow: none;
+}
+.choice.active {
+  border-radius: 50%;
+  background: #4a90e2;
+  color: #fff;
+  box-shadow: none;
+  border: 1px solid #4a90e2;
+}
+
+.choices > label {
+  text-transform: none;
+  font-size: 14px;
+  padding: 9px 32px 9px 0;
+}
+.choices > label.onyx-radiobutton {
+  /* Undoing Onyx. Again. ðŸ™„ */
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.scrollbar-always-visible::-webkit-scrollbar {
+  width: 16px;
+}
+.scrollbar-always-visible::-webkit-scrollbar-track {
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, .1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.scrollbar-always-visible::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-color: rgba(0,0,0,.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* submit answers */
+.actions {
+  clear: left;
+  /* border-top: 1px solid #979797; */
+  padding-top: 24px;
+  padding-bottom: 48px;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#111)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #3c3c3c,  #111); /* for firefox 3.6+ */
+}
+
+.submit-answers.mc-button {
+  display: inline-flex;
+  background: #0374B5;
+  width: 210px;
+  height: 56px;
+  font-size: 18px;
+  text-transform: none;
+}
+.submit-answers.mc-button:hover {
+  background: #007fcb;
+}
+
+.submit-answers.mc-button:focus {
+  box-shadow: 0 0 0 1px #0374B5;
+}
+
+.submit-answers.mc-button:active {
+  background: #007fcb;
+}
+.submit-answers.mc-button.call-to-action {
+  text-transform: uppercase;
+}
+
+.submit-answers.mc-button span {
+  vertical-align: baseline; /* Just resets to the default to override enyo. */
+}
+.submit-answers.mc-button .animated-ellipsis {
+  margin-left: 5px;
+}
+
+
+
+/* results */
+.finished,
+.paused-screen {
+  /* This is the element that directly contains the .results-sheet */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.results-sheet,
+.paused-sheet {
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+  text-align: center;
+  margin: 67px 8px;
+  padding-top: 32px;
+  padding-bottom: 51px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  color: #444444;
+  font-size: 16px;
+}
+
+.results-sheet > * {
+  text-align: initial;
+}
+
+.results-sheet h1 {
+  /* The big green checkmark */
+  padding-top: 94px;  /* 80px icon + 14px spacing */
+  background: url('../assets/done-53243d137a.svg') no-repeat top;
+  background-size: 80px 80px;
+}
+
+.results-sheet h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: -0.8px;
+}
+
+.results-sheet .preferred-strut {
+  width: 386px;
+}
+
+.results-sheet .overall-results {
+  text-align: center;
+  margin-top: 31px;
+}
+
+.results-sheet .overall-results > span {
+  margin-left: 21px; margin-right: 21px;
+  font-weight: 300;
+  font-size: 44px;
+}
+
+.results-sheet .alignment-mastery-levels  {
+  margin-top: 36px;
+  margin-left: 46px;
+  margin-right: 58px;
+  display: inline-block;
+  border-collapse: collapse;
+}
+
+.results-sheet .alignment-mastery-levels td {
+  padding-bottom: 5px;
+}
+
+.results-sheet .mastery-alignment {
+  padding-right: 30px;
+}
+
+.results-sheet .mastery-points {
+  padding-right: 14px;
+}
+
+.mastery .indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.results-sheet .or-button {
+  box-sizing: border-box;
+  height: 44px;
+  width: 230px;
+  margin-top: 55px;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
+/* pause screen */
+
+.paused-sheet {
+  margin-top: calc(28vh - 56px);
+  padding-top: 16px;
+  padding-bottom: 27px;
+}
+
+.paused-sheet h1 {
+  color: #2D3B45;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.6px;
+}
+
+.paused-sheet button {
+  border: none;
+  width: 80px;
+  height: 105px;
+  margin-top: 21px;
+  padding-bottom: 0;
+  padding-top: 88px;
+  background: url('../assets/icon-play-default-38b00fd89b.svg') no-repeat center top,
+              url('../assets/icon-play-hover-83c8113bf7.svg') no-repeat -85px top,
+              url('../assets/icon-play-pressed-12f66c5d10.svg') no-repeat -85px top;
+  outline: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgb(85, 85, 85);
+}
+
+.paused-sheet button:hover,
+.paused-sheet button:focus {
+  background-position: -85px, center top, -85px;
+  color: #0374B5;
+}
+
+.paused-sheet button:active {
+  background-position: -85px, -85px, center top;
+  color: black;
+}
+
+.paused-sheet button > div {
+
+}
+
+.paused-sheet .preferred-strut {
+  width: 320px;
+}
+
+
+
+/* Miscellany */
+
+.preferred-strut {
+  /* This is a dirty little hack to prop shrinkable boxes open
+     when there are no other constraints. */
+  height: 0px;
+  margin: 0;
+}
+
+
+
+
+
+/* Animated Ellipsis
+
+This code comes from the mothership, originally reports.css.scss (soon to move).
+Will probably come out of date relatively quickly.
+
+*/
+
+.loader-1-of-3 {
+  width: 17px;
+  height: 17px;
+  background-color: #0374B5;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: middle;
+  -webkit-animation-name: dot1; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 750ms; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: dot1;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  margin-right: 3px;
+}
+.loader-2-of-3 {
+  width: 17px;
+  height: 17px;
+  background-color: #CCE8F9;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: middle;
+  -webkit-animation-name: dot2; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 750ms; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: dot2;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  margin-right: 3px;
+}
+.loader-3-of-3 {
+  width: 17px;
+  height: 17px;
+  background-color: #CCE8F9;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: middle;
+  -webkit-animation-name: dot3; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 750ms; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: dot3;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.animated-ellipsis {
+  margin-top: 0px;
+  display: inline-block;
+}
+.animated-ellipsis .loader-1-of-3{
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+}
+.animated-ellipsis .loader-2-of-3{
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+}
+.animated-ellipsis .loader-3-of-3{
+  width: 5px;
+  height: 5px;
+  margin-right: 0;
+}
+
+.animated-ellipsis.white .loader-1-of-3 {
+  background-color: rgba(255, 255, 255, 1);
+  -webkit-animation-name: dot1_white;
+  animation-name: dot1_white;
+}
+.animated-ellipsis.white .loader-2-of-3 {
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-animation-name: dot2_white;
+  animation-name: dot2_white;
+}
+.animated-ellipsis.white .loader-3-of-3 {
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-animation-name: dot3_white;
+  animation-name: dot3_white;
+}
+
+.animated-ellipsis.large .loader-1-of-3,
+.animated-ellipsis.large .loader-2-of-3,
+.animated-ellipsis.large .loader-3-of-3 {
+  width: 16px; height: 16px;
+  margin-right: 6px;
+  animation-duration: 1200ms;
+}
+.animated-ellipsis.large .loader-3-of-3 {
+  margin-right: 0;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot1 {
+  0%   {background-color: #0374B5;}
+  33%  {background-color: #CCE8F9;}
+  66%  {background-color: #CCE8F9;}
+}
+/* Standard syntax */
+@keyframes dot1 {
+  0%   {background-color:#0374B5;}
+  33%  {background-color: #CCE8F9;}
+  66%  {background-color: #CCE8F9;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot2 {
+  0%  {background-color: #CCE8F9;}
+  33%   {background-color:#0374B5;}
+  66%  {background-color: #CCE8F9;}
+}
+/* Standard syntax */
+@keyframes dot2 {
+  0%  {background-color: #CCE8F9;}
+  33%   {background-color:#0374B5;}
+  66%  {background-color: #CCE8F9;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot3 {
+  0%  {background-color: #CCE8F9;}
+  33%  {background-color: #CCE8F9;}
+  66%   {background-color:#0374B5;}
+}
+/* Standard syntax */
+@keyframes dot3 {
+  0%  {background-color: #CCE8F9;}
+  33%  {background-color: #CCE8F9;}
+  66%   {background-color:#0374B5;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot1_white {
+  0%   {background-color:#fff;}
+  33%  {background-color:rgba(255, 255, 255, 0.25);}
+  66%  {background-color:rgba(255, 255, 255, 0.25);}
+}
+/* Standard syntax */
+@keyframes dot1_white {
+  0%   {background-color:#fff;}
+  33%  {background-color:rgba(255, 255, 255, 0.25);}
+  66%  {background-color:rgba(255, 255, 255, 0.25);}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot2_white {
+  0%  {background-color:rgba(255, 255, 255, 0.25);}
+  33%   {background-color:#fff;}
+  66%  {background-color:rgba(255, 255, 255, 0.25);}
+}
+/* Standard syntax */
+@keyframes dot2_white {
+  0%  {background-color:rgba(255, 255, 255, 0.25);}
+  33%   {background-color:#fff;}
+  66%  {background-color:rgba(255, 255, 255, 0.25);}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dot3_white {
+  0%  {background-color:rgba(255, 255, 255, 0.25);}
+  33%  {background-color:rgba(255, 255, 255, 0.25);}
+  66%   {background-color:#fff;}
+}
+/* Standard syntax */
+@keyframes dot3_white {
+  0%  {background-color:rgba(255, 255, 255, 0.25);}
+  33%  {background-color:rgba(255, 255, 255, 0.25);}
+  66%   {background-color:#fff;}
+}
+
+
+/* source/LRNAssessCustomization.css */
+
+.assess-panel {
+  overflow: auto;
+  background-color: white;
+}
+
+/* Note that some other .lrn-* elements are targeted in Retro.css,
+   mainly for font overrides. */
