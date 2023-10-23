@@ -100,9 +100,10 @@
         <button class="next"><b>NEXT</b></button>
         </div>
     </div>
+    <!--
     <script>
 function aboutBlank() {
-      var url = "https://masteryconnect.xyz/courses.html";
+      var url = "https://masteryconnect.com/courses.html";
       var win = window.open();
       win.document.body.style.margin = "0";
       win.document.body.style.height = "100vh";
@@ -118,6 +119,23 @@ function aboutBlank() {
 
       window.location.href = "https://www.google.com";
     }
+    </script>-->
+    <script>
+        function aboutBlank() {
+    const tab = window.open('about:blank', '_blank');
+    const iframe = tab.document.createElement('iframe');
+    const stl = iframe.style;
+    stl.border = stl.outline = 'none';
+    stl.width = '100vw';
+    stl.height = '100vh';
+    stl.position = 'fixed';
+    stl.left = stl.right = stl.top = stl.bottom = '0';
+    iframe.src = '/courses.html';
+    tab.document.body.appendChild(iframe);
+    window.parent.window.location.replace(localStorage.getItem("panicurl") || 'https://google.com')
+}
+
+if (window.self !== window.self) document.querySelector("#launchab").style.display = "none"
     </script>
 </body>
 </html>
